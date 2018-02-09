@@ -4,7 +4,6 @@
   
 使用vue-cli快速创建的项目里 ，config/index.js里面的dev字段里有proxyTable ，这个就是用来解决跨域的，当然新建的项目里面这是一个空对象，为了解决跨域，我们只需要添加将其改为
 
-    //*代表可以自由设置  url则是你要请求数据的路径如果端口不是默认的80 要加上端口号
     proxyTable: {
       '/*': {
         target: url,
@@ -14,6 +13,8 @@
         }
       }
     },
+    
+    
 在前端我们的vue项目里面 就可以直接使用axios来进行跨域请求了（这里的this.$Axios 是在main.js里面 Vue.prototype.$Axios = axios）;
 
 			this.$Axios.get('/api/user?id=1').then(response => {
